@@ -100,15 +100,67 @@ align-items:start;
 
 /* proyecto destacado */
 
-.project:first-child{
+/* .project:first-child{
 grid-column:span 2;
-}
+} */
+
 
 .project{
 cursor:pointer;
 }
 
 /* imágenes */
+
+.hero-project {
+  margin-bottom: 3rem;
+}
+
+.hero-project a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  color: white;
+  z-index: 2;
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* overlay oscuro */
+.hero-project a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+}
+
+/* hover */
+.hero-project:hover img {
+  transform: scale(1.05);
+}
+
 
 .featured{
 grid-column:span 2;
@@ -152,7 +204,7 @@ color:var(--accent);
 .grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:60px 40px;
+gap:2rem;
 align-items:start;
 }
 
